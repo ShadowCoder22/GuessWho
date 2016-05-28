@@ -19,7 +19,7 @@ public class HelpFrame extends JFrame
 	protected HelpFrame()
 	{
 		super("Guess Who: Help");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("support/guess.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrame.RESOURCE_DIR+"support/guess.jpg"));
 		add(build());
 		setVisible(true);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -32,7 +32,7 @@ public class HelpFrame extends JFrame
 		JPanel pane = new JPanel();
 		
 		try{
-			Scanner in = new Scanner(new File("support/help.gw"));
+			Scanner in = new Scanner(new File(MainFrame.RESOURCE_DIR+"support/help.gw"));
 			
 			pane.setPreferredSize(new Dimension(600, 300));
 			

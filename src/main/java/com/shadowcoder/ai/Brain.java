@@ -976,18 +976,18 @@ public abstract class Brain
 		try{
 			if(environment.getVersion() == 0)
 			{
-				in1 = new Scanner(new File("original/data.gw"));
-				in2 = new Scanner(new File("original/questions.gw"));
+				in1 = new Scanner(new File(MainFrame.RESOURCE_DIR+"original/data.gw"));
+				in2 = new Scanner(new File(MainFrame.RESOURCE_DIR+"original/questions.gw"));
 			}
 			else if(environment.getVersion() == 1)
 			{
-				in1 = new Scanner(new File("disney/data.gw"));
-				in2 = new Scanner(new File("disney/questions.gw"));
+				in1 = new Scanner(new File(MainFrame.RESOURCE_DIR+"disney/data.gw"));
+				in2 = new Scanner(new File(MainFrame.RESOURCE_DIR+"disney/questions.gw"));
 			}
 			else
 			{
-				in1 = new Scanner(new File("starwars/data.gw"));
-				in2 = new Scanner(new File("starwars/questions.gw"));
+				in1 = new Scanner(new File(MainFrame.RESOURCE_DIR+"starwars/data.gw"));
+				in2 = new Scanner(new File(MainFrame.RESOURCE_DIR+"starwars/questions.gw"));
 			}
 			String name, image;
 			char c;

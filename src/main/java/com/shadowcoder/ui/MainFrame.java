@@ -23,6 +23,7 @@ import com.shadowcoder.theme.*;
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame
 {
+	public static final String RESOURCE_DIR = "src/main/resources/";
 	private static final int PERSON_COUNT = 24;
 	
 	private JPanel window;
@@ -881,7 +882,7 @@ public class MainFrame extends JFrame
 	protected MainFrame(int diff, int vers)
 	{
 		super("Guess Who");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("support/guess.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrame.RESOURCE_DIR+"support/guess.jpg"));
 		
 		people = new Person[PERSON_COUNT];
 		version = vers;
@@ -913,7 +914,7 @@ public class MainFrame extends JFrame
 		
 		try {
 			seq = MidiSystem.getSequencer();
-			File midiFile = new File("audio/bluesnight.mid");
+			File midiFile = new File(MainFrame.RESOURCE_DIR+"audio/bluesnight.mid");
 			seq.setSequence(MidiSystem.getSequence(midiFile));
 			seq.setLoopCount(Sequencer.LOOP_CONTINUOUSLY);
 			seq.open();
@@ -953,7 +954,7 @@ public class MainFrame extends JFrame
 		
 		window = new JPanel()
 		{
-			ImageIcon icon = new ImageIcon("support/sky.jpg");
+			ImageIcon icon = new ImageIcon(MainFrame.RESOURCE_DIR+"support/sky.jpg");
 			
 			protected void paintComponent(Graphics g)
 			{
@@ -996,11 +997,11 @@ public class MainFrame extends JFrame
 		prof.add(new JLabel("Your Person:"));
 		JButton image;
 		if(version == 0)
-			image = new JButton(new ImageIcon("original/" + user.toString() + ".jpg"));
+			image = new JButton(new ImageIcon(MainFrame.RESOURCE_DIR+"original/" + user.toString() + ".jpg"));
 		else if(version == 1)
-			image = new JButton(new ImageIcon("disney/" + user.toString() + ".jpg"));
+			image = new JButton(new ImageIcon(MainFrame.RESOURCE_DIR+"disney/" + user.toString() + ".jpg"));
 		else
-			image = new JButton(new ImageIcon("starwars/" + user.toString() + ".jpg"));
+			image = new JButton(new ImageIcon(MainFrame.RESOURCE_DIR+"starwars/" + user.toString() + ".jpg"));
 		image.setPreferredSize(new Dimension(75, 100));
 		image.addActionListener(new ButtonListener());
 		image.setActionCommand("info");
@@ -1126,11 +1127,11 @@ public class MainFrame extends JFrame
 	{
 		try{
 			if(version == 0)
-				in =  new Scanner(new File("original/data.gw"));
+				in =  new Scanner(new File(MainFrame.RESOURCE_DIR+"original/data.gw"));
 			else if(version == 1)
-				in = new Scanner(new File("disney/data.gw"));
+				in = new Scanner(new File(MainFrame.RESOURCE_DIR+"disney/data.gw"));
 			else
-				in = new Scanner(new File("starwars/data.gw"));
+				in = new Scanner(new File(MainFrame.RESOURCE_DIR+"starwars/data.gw"));
 		}
 		catch(FileNotFoundException e)
 		{
@@ -1150,7 +1151,7 @@ public class MainFrame extends JFrame
 				String line = in.nextLine();
 				StringTokenizer t = new StringTokenizer(line);
 				name = t.nextToken();
-				image = "original/" + t.nextToken();
+				image = MainFrame.RESOURCE_DIR+"original/" + t.nextToken();
 				c = t.nextToken().charAt(0);
 				b1 = t.nextToken().equalsIgnoreCase("t");
 				b2 = t.nextToken().equalsIgnoreCase("t");
@@ -1185,7 +1186,7 @@ public class MainFrame extends JFrame
 				String line = in.nextLine();
 				StringTokenizer t = new StringTokenizer(line);
 				name = t.nextToken();
-				image = "disney/" + t.nextToken();
+				image = MainFrame.RESOURCE_DIR+"disney/" + t.nextToken();
 				c = t.nextToken().charAt(0);
 				b1 = !t.nextToken().equalsIgnoreCase("f");
 				b2 = !t.nextToken().equalsIgnoreCase("f");
@@ -1218,7 +1219,7 @@ public class MainFrame extends JFrame
 				String line = in.nextLine();
 				StringTokenizer t = new StringTokenizer(line);
 				name = t.nextToken();
-				image = "starwars/" + t.nextToken();
+				image = MainFrame.RESOURCE_DIR+"starwars/" + t.nextToken();
 				c = t.nextToken().charAt(0);
 				b1 = !t.nextToken().equalsIgnoreCase("f");
 				b2 = !t.nextToken().equalsIgnoreCase("f");
@@ -1235,11 +1236,11 @@ public class MainFrame extends JFrame
 	{
 		try{
 			if(version == 0)
-				in =  new Scanner(new File("original/questions.gw"));
+				in =  new Scanner(new File(MainFrame.RESOURCE_DIR+"original/questions.gw"));
 			else if(version == 1)
-				in = new Scanner(new File("disney/questions.gw"));
+				in = new Scanner(new File(MainFrame.RESOURCE_DIR+"disney/questions.gw"));
 			else
-				in = new Scanner(new File("starwars/questions.gw"));
+				in = new Scanner(new File(MainFrame.RESOURCE_DIR+"starwars/questions.gw"));
 		}
 		catch(FileNotFoundException e)
 		{
@@ -1330,7 +1331,7 @@ public class MainFrame extends JFrame
 		for(int i = 0; i < PERSON_COUNT; i++)
 		{
 			if(people[i].equals(c))
-				people[i].setImage("support/eliminated.jpg");
+				people[i].setImage(MainFrame.RESOURCE_DIR+"support/eliminated.jpg");
 		}
 	}
 	
@@ -1415,15 +1416,15 @@ public class MainFrame extends JFrame
 				File midiFile1;
 				if(version == 0)
 				{
-					midiFile1 = new File("audio/bluesnight.mid");
+					midiFile1 = new File(MainFrame.RESOURCE_DIR+"audio/bluesnight.mid");
 				}
 				else if(version == 1)
 				{
-					midiFile1 = new File("audio/wishstar.mid");
+					midiFile1 = new File(MainFrame.RESOURCE_DIR+"audio/wishstar.mid");
 				}
 				else
 				{
-					midiFile1 = new File("audio/cantina.mid");
+					midiFile1 = new File(MainFrame.RESOURCE_DIR+"audio/cantina.mid");
 				}
 				seq.setSequence(MidiSystem.getSequence(midiFile1));
 				seq.setLoopCount(Sequencer.LOOP_CONTINUOUSLY);

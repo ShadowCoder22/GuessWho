@@ -24,10 +24,10 @@ public class BioFrame extends JFrame
 	protected BioFrame()
 	{
 		super("Guess Who: Bio Frame");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("support/guess.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrame.RESOURCE_DIR+"support/guess.jpg"));
 		
 		try{
-			read = new Scanner(new File("support/stats.gw"));
+			read = new Scanner(new File(MainFrame.RESOURCE_DIR+"support/stats.gw"));
 			JTextArea text = new JTextArea();
 			text.setPreferredSize(new Dimension(600, 6750));
 			text.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -54,14 +54,14 @@ public class BioFrame extends JFrame
 	public BioFrame(Person c)
 	{
 		super("Guess Who: " + c.toString() + "'s Bio");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("support/guess.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrame.RESOURCE_DIR+"support/guess.jpg"));
 		JTextArea text = new JTextArea();
 		text.setPreferredSize(new Dimension(600, 300));
 		text.setFont(new Font("Arial", Font.PLAIN, 14));
 		text.setEditable(false);
 		
 		try{
-			read = new Scanner(new File("profiles/" + c.toString() + ".prof"));
+			read = new Scanner(new File(MainFrame.RESOURCE_DIR+"profiles/" + c.toString() + ".prof"));
 			while(read.hasNext())
 				text.append(read.nextLine() + "\n");
 		}

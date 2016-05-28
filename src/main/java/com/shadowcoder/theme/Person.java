@@ -92,4 +92,4 @@ public abstract class Person
 	{
 		return eliminated;
 	}
-}	
+}

@@ -1,0 +1,54 @@
+  Welcome to Guess Who!!
+  
+  Written by: Levester Chaney
+  
+  Added Ideas from:
+              Tim Fleming
+
+
+
+  Objective:
+        It is a race against the computer to guess which of
+    the twenty-four possible characters is being held by the
+    opponent.
+
+  Winning the Game:
+        The game is over when either the player or the computer's 
+    character has been correctly guessed.
+	
+  How to Play:
+        For starters, you will notice that there is a single
+    image on the left-hand side of the playing window which is
+    labeled "Your Person". This is the person that the computer
+    is attempting to guess. The computer has a character as well
+    (hidden from your view for obvious reasons).
+	
+        Next, you will notice a grid of twenty-four images on
+    the right-hand side of the playing window. This if your
+    bank of characters. The computer's character will be one of
+    these.
+	
+        Immediately beneath the images is a drop down menu of
+    questions that you can ask. These are designed to eliminate
+    characters in the bank. As the characters in the bank are
+    eliminated, you get closer to knowing which character the
+    computer has. When you have selected a question, simply click
+    the ASK button to see which characters the computer does not
+    have. 
+	
+        Below this menu is another drop down menu which harbors
+    the list of remaining characters that you are free to guess
+    at any time. Simply select a name from the list and click the
+    GUESS button to see if your guess was correct.
+	
+        Below this menu is the display area for the questions that
+    the computer will ask you. When a question is displayed there,
+    you need only check your answer (yes or no) and then click the
+    ANSWER button to submit.
+  
+  Help
+        If you are finding it difficult to correctly identify the
+    affiliation or attributes of a character, you can view the
+    Character Profiles located under the help menu. This is a small
+    description of the people not found in the original game with a
+    few facts about what they do in their own universes.
